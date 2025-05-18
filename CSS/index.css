@@ -1,0 +1,100 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 1rem;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: auto;
+    padding: 1rem;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: #480d74;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Subheadings */
+h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: -1rem;
+}
+
+.contact-info {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Cards */
+#resume-card,
+#projects-card {
+    background-color: #470d7419;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    font-size: larger;
+    font-weight: 800;
+}
+
+#resume-card:hover,
+#projects-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+#resume-card a,
+#projects-card a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "banner banner"
+            "resume projects";
+    }
+
+    h1 {
+        grid-area: banner;
+    }
+
+    #resume-card {
+        grid-area: resume;
+    }
+
+    #projects-card {
+        grid-area: projects;
+    }
+
+    h2, .contact-info {
+        grid-column: span 2;
+    }
+}
