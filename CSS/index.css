@@ -15,7 +15,7 @@ body {
 
 main {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     gap: 1.5rem;
     max-width: 1000px;
     margin: auto;
@@ -33,7 +33,6 @@ h1 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Subheadings */
 h2 {
     text-align: center;
     font-size: 1.25rem;
@@ -45,9 +44,8 @@ h2 {
     color: #555;
 }
 
-/* Cards */
-#resume-card,
-#projects-card {
+
+#card {
     background-color: #470d7419;
     padding: 2rem;
     border-radius: 8px;
@@ -58,14 +56,12 @@ h2 {
     font-weight: 800;
 }
 
-#resume-card:hover,
-#projects-card:hover {
+#rcard:hover {
     transform: scale(1.02);
     box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-#resume-card a,
-#projects-card a {
+#card {
     display: block;
     height: 100%;
     width: 100%;
@@ -75,6 +71,11 @@ h2 {
 
 a {
     text-decoration: none;
+    size: .5 rem;
+}
+
+p {
+    color: black;
 }
 
 @media (min-width: 768px) {
@@ -88,14 +89,6 @@ a {
 
     h1 {
         grid-area: banner;
-    }
-
-    #resume-card {
-        grid-area: resume;
-    }
-
-    #projects-card {
-        grid-area: projects;
     }
 
     h2, .contact-info {

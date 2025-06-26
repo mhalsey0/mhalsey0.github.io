@@ -26,19 +26,20 @@ function createCards(objArray){
         const card = new CardObject(obj.name, obj.description, obj.html_url, obj.private);
         cardArray.push(card);
     }
-    return cardArray;
+    return cardArray.sort();
 };
 
 function publishCards(cardArray){
     const container = document.getElementById("card-container");
 
     cardArray.forEach((card) => {
-        if(card.privStatus === false){
+        if(card.privStatus === false && card.description !== null){
             const newAnchor = document.createElement("a");
             const newDiv = document.createElement("div");
-            const title = document.createElement("h2");
+            const title = document.createElement("h3");
             const description = document.createElement("p");
 
+            newDiv.id = "card";
             newAnchor.href = card.url;
             title.textContent = card.title;
             description.textContent = card.description;
