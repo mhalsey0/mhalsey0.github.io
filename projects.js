@@ -7,9 +7,9 @@ class CardObject {
     }
 };
 
-async function getUserRepos(ghUserName) {
+async function getUserRepos() {
     try {
-        const res = await fetch(`https://api.github.com/users/${ghUserName}/repos`);
+        const res = await fetch(`https://api.github.com/users/mhalsey0/repos`);
         const data = await res.json();
         
         return data;
@@ -52,9 +52,9 @@ function publishCards(cardArray){
     })
 }
 
-const userName = 'mhalsey0';
+//const userName = 'mhalsey0';
 
-getUserRepos(userName)
+getUserRepos()
     .then(data => {
         console.log(data);
         const cards = createCards(data);
