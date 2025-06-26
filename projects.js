@@ -14,7 +14,6 @@ async function getRepos() {
         
         return data;
 
-
     } catch (error) {
         console.error(error);
     }
