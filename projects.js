@@ -7,7 +7,7 @@ class CardObject {
     }
 };
 
-async function getUserRepos() {
+async function getRepos() {
     try {
         const res = await fetch(`https://api.github.com/users/mhalsey0/repos`);
         const data = await res.json();
@@ -18,7 +18,7 @@ async function getUserRepos() {
     } catch (error) {
         console.error(error);
     }
-}
+};
 
 function createCards(objArray){
     const cardArray = [];
@@ -28,7 +28,7 @@ function createCards(objArray){
         cardArray.push(card);
     }
     return cardArray;
-}
+};
 
 function publishCards(cardArray){
     const container = document.getElementById("card-container");
@@ -50,11 +50,11 @@ function publishCards(cardArray){
             container.appendChild(newAnchor);
         }
     })
-}
+};
 
 //const userName = 'mhalsey0';
 
-getUserRepos()
+getRepos()
     .then(data => {
         console.log(data);
         const cards = createCards(data);
